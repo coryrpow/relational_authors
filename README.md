@@ -2,7 +2,7 @@
 
 * CRUD
 
-[ ] done
+[x] done
 
 User Story 1, Author Index 
 
@@ -11,7 +11,7 @@ As a visitor
 When I visit '/Authors'
 Then I see the name of each Author record in the system
 
-[ ] done
+[x] done
 
 User Story 2, Author Show 
 
@@ -20,7 +20,7 @@ When I visit '/Authors/:id'
 Then I see the Author with that id including the Author's attributes
 (data from each column that is on the Author table)
 
-[ ] done
+[x] done
 
 User Story 3, Book Index 
 
