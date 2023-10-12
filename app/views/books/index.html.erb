@@ -1,0 +1,8 @@
+<h1>Books Index</h1>
+
+<% @books.each do |book| %>
+  <p><%= book.title %></p>
+  <li>Year Published:<%= book.published %></li>
+  <li>In print:<%= book.in_print %></li>
+  <li>Tranlated in English:<%= book.translated_english %></li>
+<% end %>
