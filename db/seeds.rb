@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+@author_1 = Author.create!(name: "Roberto Bolano", born: 1953, alive: false)
+@author_2 = Author.create!(name: "Thomas Pynchon", born: 1937, alive: true)
+@author_3 = Author.create!(name: "Flannery O'Connor", born: 1925, alive: false)
+
+@book_1 = @author_1.books.create!(title: "2666", published: 2004, in_print: true, translated_english: true)
+@book_2 = @author_1.books.create!(title: "Savage Detectives", published: 1998, in_print: true, translated_english: true)
+@book_3 = @author_1.books.create!(title: "The Third Riech", published: 2010, in_print: true, translated_english: true)
+@book_4 = @author_1.books.create!(title: "Advice from a Morrison Discple to a Joyce Fanatic", published: 1984, in_print: true, translated_english: false)

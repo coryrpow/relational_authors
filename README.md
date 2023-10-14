@@ -49,7 +49,7 @@ Then I see each book that is associated with that author with each book's attrib
 
 * ActiveRecord
 
-[ ] done
+[x] done
 
 User Story 6, Author Index sorted by Most Recently Created 
 
