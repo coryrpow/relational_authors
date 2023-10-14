@@ -6,7 +6,7 @@ class Author < ApplicationRecord
                        
   validates :alive, inclusion: [true, false]
 
-  def self.order_by_created_at
+  def self.most_recently_created
     self.all.order(created_at: :asc)
   end
 
