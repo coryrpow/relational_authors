@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   #Authors Routes
 
   get "/authors", to: "authors#index"
+  get "/authors/new", to: "authors#new"
   get "/authors/:id", to: "authors#show"
+  post "/authors", to: "authors#create"
 
   #Authors Books Routes
 

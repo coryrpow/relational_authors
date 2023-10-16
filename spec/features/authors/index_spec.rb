@@ -64,6 +64,35 @@ RSpec.describe "authors#index" do
       expect(page).to have_content("Authors Index")
       click_link("Authors Index")
     end
+
+    it "11. shows a link to create a new Author, when clicked, 
+    I am taken to '/authors/new' where I see a form for a new author" do
+      visit "/authors"
+
+      expect(page).to have_link("New Author")
+      click_link("New Author")
+
+      expect(page).to have_current_path("/authors/new")
+      expect(page).to have_content("New Author Form")
+      expect(page).to have_field(:name)
+      expect(page).to have_field(:born)
+      expect(page).to have_field(:alive)
+      expect(page).to have_button("Create Author")
+    end
+    it "when I fill out the form with author attributes and I click 'Create Author' then a POST
+    request is sent and a new author record is created and I am redirected to the Author Index page
+    where the new author is displayed" do
+      visit "/authors"
+
+      click_link("New Author")
+      fill_in(:name, with: "Julio Cortazar")
+      fill_in(:born, with: "1914")
+      fill_in(:alive, with: "false")
+      click_button("Create Author")
+
+      expect(page).to have_current_path("/authors")
+      expect(page).to have_content("Julio Cortazar")
+    end
   end
 
 
