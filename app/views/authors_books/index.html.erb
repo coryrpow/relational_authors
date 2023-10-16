@@ -12,3 +12,5 @@
   <li>In print:<%= book.in_print %></li>
   <li>Tranlated in English:<%= book.translated_english %></li>
 <% end %>
+
+<%= link_to 'Add Book', "/authors/#{@author.id}/books/new"%>
