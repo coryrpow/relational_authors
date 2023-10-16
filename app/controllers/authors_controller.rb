@@ -21,4 +21,19 @@ class AuthorsController < ApplicationController
     redirect_to "/authors"
   end
 
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    author = Author.find(params[:id])
+    author.update({
+      name: params[:name],
+      born: params[:born],
+      alive: (params[:alive] || false)
+    })
+    author.save
+    redirect_to "/authors/#{author.id}"
+  end
+
 end
