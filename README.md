@@ -58,7 +58,7 @@ When I visit the Author index,
 I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
 
-[ ] done
+[x] done
 
 User Story 7, Author Book Count
 
@@ -68,29 +68,29 @@ I see a count of the number of Books associated with this Author
 
 * Usability 
 
-[ ] done
+[x] done
 
-User Story 8, Book Index Link
-
-As a visitor
-When I visit any page on the site
-Then I see a link at the top of the page that takes me to the Book Index
-
-[ ] done
-
-User Story 9, Author Index Link
+User Story 8, Books Index Link
 
 As a visitor
 When I visit any page on the site
-Then I see a link at the top of the page that takes me to the Author Index
+Then I see a link at the top of the page that takes me to the Books Index
 
-[ ] done
+[x] done
 
-User Story 10, Author Book Index Link
+User Story 9, Authors Index Link
 
 As a visitor
-When I visit a Author show page ('/Authors/:id')
-Then I see a link to take me to that Author's `books` page ('/Authors/:id/books')
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Authors Index
+
+[x] done
+
+User Story 10, Authors Books Index Link
+
+As a visitor
+When I visit a Authors show page ('/authors/:id')
+Then I see a link to take me to that Author's `books` page ('/authors/:id/books')
 
 * Iteration 2
 

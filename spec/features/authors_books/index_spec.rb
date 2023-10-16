@@ -37,5 +37,12 @@ RSpec.describe "authors#index" do
       expect(page).to have_content(@book_4.in_print)
       expect(page).to have_content(@book_4.translated_english)
     end
+
+    it "10. when visiting an Author's show page then I see a link
+    at the top of the page that takes me to that Author's Books Index" do
+      visit "/authors/#{@author_1.id}/books"
+      expect(page).to have_content("Authors Books Index")
+      click_link("Authors Books Index")
+    end
   end
 end

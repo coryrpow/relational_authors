@@ -29,6 +29,29 @@ RSpec.describe "books#index" do
       expect(page).to have_content(@book_3.in_print)  
       expect(page).to have_content(@book_3.translated_english)  
     end
+
+    it "8. when visiting any page on the site then I see a link
+    at the top of the page that takes me to the Books Index" do
+      visit "/authors"
+      expect(page).to have_content("Books Index")
+      click_link("Books Index")
+
+      visit "/authors/#{@author_1.id}"
+      expect(page).to have_content("Books Index")
+      click_link("Books Index")
+
+      visit "/authors/#{@author_1.id}/books"
+      expect(page).to have_content("Books Index")
+      click_link("Books Index")
+
+      visit "/books"
+      expect(page).to have_content("Books Index")
+      click_link("Books Index")
+
+      visit "/books/#{@book_1.id}"
+      expect(page).to have_content("Books Index")
+      click_link("Books Index")
+    end
   end
 
 end

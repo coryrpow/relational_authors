@@ -5,6 +5,11 @@ RSpec.describe "authors#index" do
     @author_1 = Author.create!(name: "Roberto Bolano", born: 1953, alive: false)
     @author_2 = Author.create!(name: "Thomas Pynchon", born: 1937, alive: true)
     @author_3 = Author.create!(name: "Flannery O'Connor", born: 1925, alive: false)
+
+    @book_1 = @author_1.books.create!(title: "2666", published: 2004, in_print: true, translated_english: true)
+    @book_2 = @author_1.books.create!(title: "Savage Detectives", published: 1998, in_print: true, translated_english: true)
+    @book_3 = @author_1.books.create!(title: "The Third Riech", published: 2010, in_print: true, translated_english: true)
+    @book_4 = @author_1.books.create!(title: "Advice from a Morrison Discple to a Joyce Fanatic", published: 1984, in_print: true, translated_english: false)
   end
   
   describe "when I visit '/authors'" do
@@ -28,13 +33,36 @@ RSpec.describe "authors#index" do
       
 
       # These don't work and I think it has something to do with the 
-      # way the time is displaying, but not sure how to get that
+      # way the time is displaying in the view, but not sure how to get that
       # or if it even matters if the authors names appearing in order 
       # already passes the test in an effective way.
 
 
       # expect(@author_1.created_at).to appear_before(@author_2.created_at) 
       # expect(@author_2.created_at).to appear_before(@author_3.created_at) 
+    end
+
+    it "9. when visiting any page on the site then I see a link
+    at the top of the page that takes me to the Authors Index" do
+      visit "/authors"
+      expect(page).to have_content("Authors Index")
+      click_link("Authors Index")
+
+      visit "/authors/#{@author_1.id}"
+      expect(page).to have_content("Authors Index")
+      click_link("Authors Index")
+
+      visit "/authors/#{@author_1.id}/books"
+      expect(page).to have_content("Authors Index")
+      click_link("Authors Index")
+
+      visit "/books"
+      expect(page).to have_content("Authors Index")
+      click_link("Authors Index")
+
+      visit "/books/#{@book_1.id}"
+      expect(page).to have_content("Authors Index")
+      click_link("Authors Index")
     end
   end
 
