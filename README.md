@@ -2,54 +2,54 @@
 
 * CRUD
 
-[ ] done
+[x] done
 
-User Story 1, Author Index 
+User Story 1, Authors Index 
 
-For each Author table
+For each author table
 As a visitor
-When I visit '/Authors'
+When I visit '/authors'
 Then I see the name of each Author record in the system
 
-[ ] done
+[x] done
 
-User Story 2, Author Show 
-
-As a visitor
-When I visit '/Authors/:id'
-Then I see the Author with that id including the Author's attributes
-(data from each column that is on the Author table)
-
-[ ] done
-
-User Story 3, Book Index 
+User Story 2, Authors Show 
 
 As a visitor
-When I visit '/Book_table_name'
-Then I see each Book in the system including the Book's attributes
-(data from each column that is on the Book table)
+When I visit '/authors/:id'
+Then I see the author with that id including the author's attributes
+(data from each column that is on the authors table)
 
-[ ] done
+[x] done
 
-User Story 4, Book Show 
-
-As a visitor
-When I visit '/Book_table_name/:id'
-Then I see the Book with that id including the Book's attributes
-(data from each column that is on the Book table)
-
-[ ] done
-
-User Story 5, Author Bookren Index 
+User Story 3, Books Index 
 
 As a visitor
-When I visit '/Authors/:Author_id/Book_table_name'
-Then I see each Book that is associated with that Author with each Book's attributes
-(data from each column that is on the Book table)
+When I visit '/books'
+Then I see each book in the system including the book's attributes
+(data from each column that is on the book table)
+
+[x] done
+
+User Story 4, Books Show 
+
+As a visitor
+When I visit '/books/:id'
+Then I see the book with that id including the book's attributes
+(data from each column that is on the book table)
+
+[x] done
+
+User Story 5, Author Books Index 
+
+As a visitor
+When I visit '/authors/:author_id/books'
+Then I see each book that is associated with that author with each book's attributes
+(data from each column that is on the books table)
 
 * ActiveRecord
 
-[ ] done
+[x] done
 
 User Story 6, Author Index sorted by Most Recently Created 
 
@@ -58,7 +58,7 @@ When I visit the Author index,
 I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
 
-[ ] done
+[x] done
 
 User Story 7, Author Book Count
 
@@ -68,29 +68,29 @@ I see a count of the number of Books associated with this Author
 
 * Usability 
 
-[ ] done
+[x] done
 
-User Story 8, Book Index Link
-
-As a visitor
-When I visit any page on the site
-Then I see a link at the top of the page that takes me to the Book Index
-
-[ ] done
-
-User Story 9, Author Index Link
+User Story 8, Books Index Link
 
 As a visitor
 When I visit any page on the site
-Then I see a link at the top of the page that takes me to the Author Index
+Then I see a link at the top of the page that takes me to the Books Index
 
-[ ] done
+[x] done
 
-User Story 10, Author Book Index Link
+User Story 9, Authors Index Link
 
 As a visitor
-When I visit a Author show page ('/Authors/:id')
-Then I see a link to take me to that Author's `books` page ('/Authors/:id/books')
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Authors Index
+
+[x] done
+
+User Story 10, Authors Books Index Link
+
+As a visitor
+When I visit a Authors show page ('/authors/:id')
+Then I see a link to take me to that Author's `books` page ('/authors/:id/books')
 
 * Iteration 2
 

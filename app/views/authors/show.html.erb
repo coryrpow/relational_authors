@@ -1,0 +1,11 @@
+<header>
+<p><%= link_to "Authors Index", "/authors"%></p>
+<p><%= link_to "Books Index", "/books"%></p>
+<p><%= link_to "Authors Books Index", "/authors/#{@author.id}/books"%></p>
+</header>
+
+<h1><%= @author.name %></h1>
+
+
+<p><%= @author.born %></p>
+<p><%= @author.alive %></p>

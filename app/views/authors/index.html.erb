@@ -1,0 +1,12 @@
+<header>
+<p><%= link_to "Authors Index", "/authors"%></p>
+<p><%= link_to "Books Index", "/books"%></p>
+</header>
+
+<h1>Authors Index</h1>
+
+<% @authors.each do |author| %>
+  <p><%= author.name %></p>
+  <p>Date Created:<%= author.created_at %></p>
+
+<% end %><p>
