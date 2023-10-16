@@ -31,6 +31,14 @@ RSpec.describe "authors#show" do
       expect(@author_1.book_count).to eq(4)
     end
 
+    it "10. when visiting an Author's show page then I see a link
+    at the top of the page that takes me to that Author's Books Index" do
+      visit "/authors/#{@author_1.id}"
+      expect(page).to have_content("Authors Books Index")
+      click_link("Authors Books Index")
+      expect(page).to have_current_path("/authors/#{@author_1.id}/books")
+    end
+
     it "12. I see a link to 'Update Author' when clicked, I am
     taken to 'author/:id/edit' where I see a form to edit the author's attributes" do
       visit "/authors/#{@author_2.id}"
