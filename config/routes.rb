@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/authors/new", to: "authors#new"
   get "/authors/:id", to: "authors#show"
   post "/authors", to: "authors#create"
+  get "/authors/:id/edit", to: "authors#edit"
+  patch "/authors/:id", to: "authors#update"
 
   #Authors Books Routes
 

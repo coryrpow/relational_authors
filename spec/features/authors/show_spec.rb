@@ -29,7 +29,37 @@ RSpec.describe "authors#show" do
       visit "/authors/#{@author_1.id}"
 
       expect(@author_1.book_count).to eq(4)
-    
+    end
+
+    it "12. I see a link to 'Update Author' when clicked, I am
+    taken to 'author/:id/edit' where I see a form to edit the author's attributes" do
+      visit "/authors/#{@author_2.id}"
+
+      expect(page).to have_link("Update Author")
+      click_link("Update Author")
+
+      expect(page).to have_current_path("/authors/#{@author_2.id}/edit")
+      expect(page).to have_content("Update Author Form")
+      expect(page).to have_field(:name)
+      expect(page).to have_field(:born)
+      expect(page).to have_field(:alive)
+      expect(page).to have_button("Update Author")
+    end
+
+    it "when I fill out the form with updated info and click 'Submit'
+    then a PATCh request is sent to 'authors/:id', the info is updated, and
+    I am redirected to the Author's Show page with updated info" do
+      visit "/authors/#{@author_2.id}"
+
+      click_link("Update Author")
+
+      fill_in(:name, with: "Tyrone Slothrop")
+      fill_in(:born, with: "1937")
+      fill_in(:alive, with: "true")
+      click_button("Update Author")
+
+      expect(page).to have_current_path("/authors/#{@author_2.id}")
+      expect(page).to have_content("Tyrone Slothrop")
     end
   end
 
