@@ -10,6 +10,7 @@ RSpec.describe "authors#index" do
     @book_2 = @author_1.books.create!(title: "Savage Detectives", published: 1998, in_print: true, translated_english: true)
     @book_3 = @author_1.books.create!(title: "The Third Riech", published: 2010, in_print: true, translated_english: true)
     @book_4 = @author_1.books.create!(title: "Advice from a Morrison Discple to a Joyce Fanatic", published: 1984, in_print: true, translated_english: false)
+    @book_5 = @author_1.books.create!(title: "Last Evenings on Earth", published: 1997, in_print: true, translated_english: true)
   end
 
   describe "when I visit '/authors/:id/books'" do
@@ -70,6 +71,24 @@ RSpec.describe "authors#index" do
 
       expect(page).to have_current_path("/authors/#{@author_1.id}/books")
       expect(page).to have_content("Amulet")
+    end
+
+    it "16. then I see a link_to sort in alphabetical order and when clicked
+    I see all of the Author's Books in alphabetical order" do
+      visit "/authors/#{@author_1.id}/books"
+
+      expect(@book_1.title).to appear_before(@book_2.title)
+      expect(@book_2.title).to appear_before(@book_3.title)
+      expect(@book_3.title).to appear_before(@book_4.title)
+      expect(@book_4.title).to appear_before(@book_5.title)
+
+      expect(page).to have_link("Sort Alphabetically")
+      click_link("Sort Alphabetically")
+
+      expect(@book_1.title).to appear_before(@book_4.title)
+      expect(@book_4.title).to appear_before(@book_5.title)
+      expect(@book_5.title).to appear_before(@book_2.title)
+      expect(@book_2.title).to appear_before(@book_3.title)
     end
   end
 end

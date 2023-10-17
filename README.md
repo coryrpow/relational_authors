@@ -157,7 +157,7 @@ and I am redirected to the book Show page where I see the book's updated informa
 
 * ActiveRecord 
 
-[ ] done
+[x] done
 
 User Story 15, books Index only shows `true` Records 
 
@@ -165,7 +165,7 @@ As a visitor
 When I visit the books index
 Then I only see records where the boolean column is `true`
 
-[ ] done
+[x] done
 
 User Story 16, Sort Author's books in Alphabetical Order by name 
 
