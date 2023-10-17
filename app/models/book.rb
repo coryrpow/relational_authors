@@ -8,9 +8,6 @@ class Book < ApplicationRecord
 
   belongs_to :author
 
-  # def tranlate_only
-  #   self.where(translated_english: true)
-  # end
 
   def self.alphabetical_books
     Book.order(title: :asc)

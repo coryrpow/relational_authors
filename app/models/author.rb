@@ -14,8 +14,4 @@ class Author < ApplicationRecord
     books.count
   end
 
-  def translate_only
-    books.where(translated_english: true)
-  end
-
 end

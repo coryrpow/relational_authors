@@ -61,8 +61,6 @@ RSpec.describe "books#index" do
       expect(page).to have_content(@book_3.translated_english)
 
       expect(page).to_not have_content(@book_4.translated_english)
-
     end
   end
-
 end
