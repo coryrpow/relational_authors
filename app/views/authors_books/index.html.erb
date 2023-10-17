@@ -5,10 +5,13 @@
 </header>
 
 <h1><%=@author.name%>'s Books Index</h1>
+<%= link_to 'Sort Alphabetically', "/authors/#{@author.id}/books?sort=alphabetical" %>
 
-<% @books.each do |book| %>
+<% @author_books.each do |book| %>
   <p><%= book.title %></p>
   <li>Year Published:<%= book.published %></li>
   <li>In print:<%= book.in_print %></li>
   <li>Tranlated in English:<%= book.translated_english %></li>
 <% end %>
+
+<%= link_to 'Add Book', "/authors/#{@author.id}/books/new"%>

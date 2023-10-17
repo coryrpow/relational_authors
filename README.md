@@ -96,52 +96,52 @@ Then I see a link to take me to that Author's `books` page ('/authors/:id/books'
 
 * CRUD 
 
-[ ] done
+[x] done
 
 User Story 11, Author Creation 
 
 As a visitor
-When I visit the Author Index page
-Then I see a link to create a new Author record, "New Author"
+When I visit the Authors Index page
+Then I see a link to create a new Author record, "New Authors"
 When I click this link
-Then I am taken to '/Authors/new' where I  see a form for a new Author record
+Then I am taken to '/authors/new' where I  see a form for a new Author record
 When I fill out the form with a new Author's attributes:
 And I click the button "Create Author" to submit the form
-Then a `POST` request is sent to the '/Authors' route,
+Then a `POST` request is sent to the '/authors' route,
 a new Author record is created,
-and I am redirected to the Author Index page where I see the new Author displayed.
+and I am redirected to the Authors Index page where I see the new Author displayed.
 
-[ ] done
+[x] done
 
 User Story 12, Author Update 
 
 As a visitor
-When I visit a Author show page
+When I visit a Authors show page
 Then I see a link to update the Author "Update Author"
 When I click the link "Update Author"
-Then I am taken to '/Authors/:id/edit' where I  see a form to edit the Author's attributes:
+Then I am taken to '/authors/:id/edit' where I  see a form to edit the Author's attributes:
 When I fill out the form with updated information
 And I click the button to submit the form
-Then a `PATCH` request is sent to '/Authors/:id',
+Then a `PATCH` request is sent to '/authors/:id',
 the Author's info is updated,
 and I am redirected to the Author's Show page where I see the Author's updated info
 
-[ ] done
+[x] done
 
-User Story 13, Author Books Creation 
+User Story 13, Author Book Creation 
 
 As a visitor
-When I visit a Author Books Index page
+When I visit a Authors Books Index page
 Then I see a link to add a new book for that Author "Create Books"
 When I click the link
-I am taken to '/Authors/:Author_id/Books_table_name/new' where I see a form to add a new adoptable Books
+I am taken to '/authors/:author_id/books/new' where I see a form to add a new Book
 When I fill in the form with the Books's attributes:
 And I click the button "Create Books"
-Then a `POST` request is sent to '/Authors/:Author_id/Books_table_name',
+Then a `POST` request is sent to '/authors/:author_id/books',
 a new Books object/row is created for that Author,
-and I am redirected to the Author Bookss Index page where I can see the new Books listed
+and I am redirected to the Authors Books Index page where I can see the new Book listed
 
-[ ] done
+[x] done
 
 User Story 14, book Update 
 
@@ -157,7 +157,7 @@ and I am redirected to the book Show page where I see the book's updated informa
 
 * ActiveRecord 
 
-[ ] done
+[x] done
 
 User Story 15, books Index only shows `true` Records 
 
@@ -165,7 +165,7 @@ As a visitor
 When I visit the books index
 Then I only see records where the boolean column is `true`
 
-[ ] done
+[x] done
 
 User Story 16, Sort Author's books in Alphabetical Order by name 
 

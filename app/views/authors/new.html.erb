@@ -1,0 +1,11 @@
+<h1>New Author Form</h1>
+
+<%= form_with url: "/authors", method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :born %>
+  <%= form.text_field :born %>
+  <%= form.label :alive %>
+  <%= form.text_field :alive %>
+  <%= form.submit 'Create Author' %>
+<% end %>

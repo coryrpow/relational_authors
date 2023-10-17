@@ -27,7 +27,7 @@ RSpec.describe "books#index" do
       expect(page).to have_content(@book_3.title)  
       expect(page).to have_content(@book_3.published)  
       expect(page).to have_content(@book_3.in_print)  
-      expect(page).to have_content(@book_3.translated_english)  
+      expect(page).to have_content(@book_3.translated_english)
     end
 
     it "8. when visiting any page on the site then I see a link
@@ -51,6 +51,17 @@ RSpec.describe "books#index" do
       visit "/books/#{@book_1.id}"
       expect(page).to have_content("Books Index")
       click_link("Books Index")
+    end
+
+    it "15. only shows the books with the boolean column 'translated_english' as 'true' " do
+      visit "/books"
+
+      expect(page).to have_content(@book_1.translated_english)
+      expect(page).to have_content(@book_2.translated_english)
+      expect(page).to have_content(@book_3.translated_english)
+
+      expect(page).to_not have_content(@book_4.translated_english)
+
     end
   end
 
