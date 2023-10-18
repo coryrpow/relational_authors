@@ -24,7 +24,7 @@ RSpec.describe "authors#show" do
       expect(page).to_not have_content(@author_3.name)  
     end
 
-    it "shows the count of the number of books 
+    it "7. shows the count of the number of books 
     associated with this author" do
       visit "/authors/#{@author_1.id}"
 

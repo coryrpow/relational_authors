@@ -5,9 +5,11 @@
 
 <h1>Books Index</h1>
 
-<% @books.tranlate_only.each do |book| %>
-  <p><%= book.title %></p>
-  <li>Year Published:<%= book.published %></li>
-  <li>In print:<%= book.in_print %></li>
-  <li>Tranlated in English:<%= book.translated_english %></li>
+<% @books.each do |book| %>
+  <% if book.translated_english == true %>
+    <p><%= book.title %></p>
+    <li>Year Published:<%= book.published %></li>
+    <li>In print:<%= book.in_print %></li>
+    <li>Tranlated in English:<%= book.translated_english %></li>
+  <% end %>
 <% end %>
